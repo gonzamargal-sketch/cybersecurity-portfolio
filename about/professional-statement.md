@@ -1,0 +1,3 @@
+# Professional Statement
+
+I am a motivated and detail-oriented aspiring cybersecurity analyst currently completing the Google Cybersecurity Certificate. I am passionate about protecting systems and sensitive information, and I am developing skills in security analysis, networking, Linux, and incident response. I value continuous learning and aim to support organizations by identifying risks and helping maintain a strong security posture.

@@ -12,6 +12,11 @@ My focus areas include:
 - SQL and data handling
 - Incident detection and response
 
+## 📄 Professional Statement
+You can find my professional statement here:  
+[View Professional Statement](about/professional-statement.md)
+
+
 ## 📂 Portfolio Structure
 
 This repository is organized into the following sections:
@@ -51,7 +56,7 @@ Projects, labs, and practical exercises will be added as I progress through my t
 - Security frameworks and best practices
 
 ## 📬 Contact
-LinkedIn: [https://www.linkedin.com/in/gonzalo-maroto/]
+LinkedIn: [Gonzalo Maroto](https://www.linkedin.com/in/gonzalo-maroto/)
 
 ---
 
