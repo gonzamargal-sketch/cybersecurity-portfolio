@@ -2,8 +2,6 @@
 
 > **Document type:** Security audit — Completed checklist  
 > **Context:** Google Cybersecurity Certificate practical case study  
-> **Skills demonstrated:** Controls auditing, compliance assessment (PCI DSS, GDPR, SOC), gap analysis, security recommendations
-
 ---
 
 ## What is this document?
