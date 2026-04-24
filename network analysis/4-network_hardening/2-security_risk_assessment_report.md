@@ -51,5 +51,6 @@ Together, these measures prevent unauthorized external actors from reaching inte
 
 **Implementation frequency:** Initial firewall rule configuration is a one-time setup, but firewall maintenance must be performed on a regular and ongoing basis. Rules should be reviewed whenever the network topology changes, after any security incident, and as part of scheduled security reviews (recommended at minimum quarterly). Firewall logs should be monitored continuously — ideally through a SIEM tool — to detect attempts to exploit open ports or bypass filtering rules.
 
+---
 
 *Document created as part of a professional cybersecurity portfolio.*
