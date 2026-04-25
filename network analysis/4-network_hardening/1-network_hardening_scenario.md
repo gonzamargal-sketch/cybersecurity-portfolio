@@ -27,6 +27,12 @@ If left unaddressed, these vulnerabilities expose the organization to repeated d
 
 ---
 
+## OS Hardening
+
+As covered in the course, **OS hardening** focuses on securing the operating system layer and is primarily addressed through three practices: **patch updates** (applying fixes for known vulnerabilities), **baseline configurations** (establishing and enforcing a documented secure state for all systems), and **hardware and software disposal** (properly wiping and decommissioning outdated components to prevent exploitation).
+
+---
+
 ## What is Network Hardening?
 
 **Network hardening** is the process of securing a network by reducing its attack surface — eliminating unnecessary services, enforcing access controls, applying configurations that follow security best practices, and monitoring for anomalies. It is both a one-time setup and an ongoing practice, since new vulnerabilities emerge continuously and configurations drift over time.
