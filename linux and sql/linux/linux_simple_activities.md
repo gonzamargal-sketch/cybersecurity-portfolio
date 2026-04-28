@@ -63,3 +63,27 @@
 | `head -n 5 updates.txt` | Display the first 5 lines of `updates.txt`, using `-n` to specify the number of lines |
 
 ---
+
+## Activity 4 — Search Files and Filter Output
+
+> **Environment:** Linux Bash shell  
+> **Tools:** `grep`, `|`, `find` — built-in Bash commands for searching content inside files, chaining commands, and locating files in the file system
+
+---
+
+### Commands used
+
+| Command | Purpose |
+|---|---|
+| `grep "error" server_logs.txt` | Search the file `server_logs.txt` for lines containing the string `error` and print only those lines |
+| `grep -i "error" server_logs.txt` | Same search using `-i` to make it case-insensitive, matching `error`, `Error`, `ERROR`, etc. |
+| `grep -r "failed" /home/analyst/logs` | Recursively search all files under `/home/analyst/logs` for lines containing `failed` |
+| `grep -n "root" passwd.txt` | Search `passwd.txt` for lines containing `root` and display the line numbers alongside the matches |
+| `grep -c "error" server_logs.txt` | Count the number of lines in `server_logs.txt` that contain the string `error` |
+| `ls /home/analyst/reports \| grep "users"` | List the files in the `reports` directory and pipe the output to `grep` to filter and show only filenames that contain `users`. The pipe `\|` passes the output of the first command as input to the second |
+| `cat server_logs.txt \| grep "error"` | Display the contents of `server_logs.txt` and pipe the output to `grep` to filter and show only lines containing `error` |
+| `find /home/analyst -name "*.txt"` | Search the `/home/analyst` directory and all its subdirectories for files whose names end in `.txt` |
+| `find /home/analyst -type d` | Search under `/home/analyst` for items of type directory (`d`), listing all subdirectories found |
+| `find /home/analyst -mtime -3` | Find all files under `/home/analyst` that were modified within the last 3 days, useful for identifying recently changed files |
+
+---
