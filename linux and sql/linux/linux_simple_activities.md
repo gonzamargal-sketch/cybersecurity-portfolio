@@ -87,3 +87,29 @@
 | `find /home/analyst -mtime -3` | Find all files under `/home/analyst` that were modified within the last 3 days, useful for identifying recently changed files |
 
 ---
+
+## Activity 5 — Manage Files and Directories
+
+> **Environment:** Linux Bash shell  
+> **Tools:** `mkdir`, `rmdir`, `touch`, `rm`, `mv`, `cat`, `cp` — built-in Bash commands for creating, deleting, moving, and editing files and directories
+
+---
+
+### Commands used
+
+| Command | Purpose |
+|---|---|
+| `mkdir logs` | Create a new directory named `logs` inside the current working directory |
+| `mkdir -p reports/2024/april` | Create a nested directory structure in one command. `-p` creates all intermediate directories that do not yet exist |
+| `rmdir logs` | Remove an empty directory named `logs`. Fails if the directory contains any files |
+| `touch report.txt` | Create a new empty file named `report.txt`. If the file already exists, it updates its last-modified timestamp without changing the content |
+| `rm report.txt` | Delete the file `report.txt` permanently. This action cannot be undone |
+| `rm -r old_reports` | Recursively delete the directory `old_reports` and all its contents. `-r` is required to remove non-empty directories |
+| `mv report.txt /home/analyst/reports` | Move the file `report.txt` to the `/home/analyst/reports` directory |
+| `mv report.txt summary.txt` | Rename the file `report.txt` to `summary.txt` by moving it to the same location with a new name |
+| `cp report.txt /home/analyst/backup` | Copy the file `report.txt` to the `/home/analyst/backup` directory, leaving the original file in place |
+| `cp -r logs /home/analyst/backup` | Recursively copy the entire `logs` directory and its contents to `/home/analyst/backup`. `-r` is required to copy directories |
+| `cat report.txt` | Display the full contents of `report.txt` in the terminal |
+| `cat file1.txt file2.txt > combined.txt` | Concatenate the contents of `file1.txt` and `file2.txt` and write the result into a new file `combined.txt` using output redirection (`>`) |
+
+---
