@@ -53,8 +53,6 @@
 |---|---|
 | `pwd` | Print the current working directory, showing the absolute path of the directory you are in |
 | `ls` | List the files and subdirectories inside the current directory |
-| `ls -l` | List directory contents in long format, displaying file permissions, owner, size, and modification date |
-| `ls -a` | List all files including hidden files (those whose names start with `.`) |
 | `cd /home/analyst` | Change the current working directory to `/home/analyst` using an absolute path |
 | `cd logs` | Change into the `logs` subdirectory using a relative path |
 | `cd ..` | Move up one level to the parent directory |
@@ -111,5 +109,55 @@
 | `cp -r logs /home/analyst/backup` | Recursively copy the entire `logs` directory and its contents to `/home/analyst/backup`. `-r` is required to copy directories |
 | `cat report.txt` | Display the full contents of `report.txt` in the terminal |
 | `cat file1.txt file2.txt > combined.txt` | Concatenate the contents of `file1.txt` and `file2.txt` and write the result into a new file `combined.txt` using output redirection (`>`) |
+
+---
+
+## Activity 6 — Manage File and Directory Permissions
+
+> **Environment:** Linux Bash shell  
+> **Tools:** `ls -l`, `ls -la`, `chmod` — built-in Bash commands for inspecting and modifying file and directory permissions
+
+---
+
+### Permission string format
+
+Each file or directory entry returned by `ls -l` begins with a 10-character permission string, for example `drwxrwxrwx`:
+
+| Position | Meaning |
+|---|---|
+| 1 | File type: `d` = directory, `-` = regular file |
+| 2–4 | **User** (owner) permissions: `r` read, `w` write, `x` execute |
+| 5–7 | **Group** permissions: `r` read, `w` write, `x` execute |
+| 8–10 | **Other** (everyone else) permissions: `r` read, `w` write, `x` execute |
+
+A `-` in any position means that permission is not granted.
+
+---
+
+### Commands used
+
+| Command | Purpose |
+|---|---|
+| `ls -l` | List directory contents in long format, showing the permission string, owner, group, size, and modification date of each file |
+| `ls -la` | Same as `ls -l` but also includes hidden files (names starting with `.`). Used to audit all files, including archived or configuration files |
+| `chmod o-w project_k.txt` | Remove write permission for **other** on `project_k.txt`. `o` targets the other owner type, `-` removes the permission, `w` is write |
+| `chmod g-r project_m.txt` | Remove read permission for the **group** on `project_m.txt` |
+| `chmod u-w,g-w,g+r .project_x.txt` | Remove write for user and group, and ensure group has read, on the hidden file `.project_x.txt`. Multiple changes can be combined with a comma |
+| `chmod g-x drafts` | Remove execute permission for the **group** on the `drafts` directory. Execute on a directory controls the ability to enter it and access its contents |
+
+---
+
+### `chmod` operator reference
+
+| Symbol | Meaning |
+|---|---|
+| `u` | User (file owner) |
+| `g` | Group |
+| `o` | Other (everyone else) |
+| `+` | Grant the permission |
+| `-` | Remove the permission |
+| `r` | Read |
+| `w` | Write |
+| `x` | Execute |
 
 ---
