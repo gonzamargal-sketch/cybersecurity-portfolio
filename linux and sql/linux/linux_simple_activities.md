@@ -112,10 +112,12 @@
 
 ---
 
-## Activity 6 — Manage File and Directory Permissions
+## Activity 6 — Manage File and Directory Permissions (Authorization)
 
 > **Environment:** Linux Bash shell  
 > **Tools:** `ls -l`, `ls -la`, `chmod` — built-in Bash commands for inspecting and modifying file and directory permissions
+>
+> **Concept:** This activity focuses on **authorization** — determining what resources a user is allowed to access after their identity has already been established. In Linux, authorization is enforced through file and directory permissions that control which users and groups can read, write, or execute each resource. This is distinct from **authentication** (covered in the next activity), which focuses on verifying who the user is.
 
 ---
 
@@ -159,5 +161,27 @@ A `-` in any position means that permission is not granted.
 | `r` | Read |
 | `w` | Write |
 | `x` | Execute |
+
+---
+
+## Activity 7 — Manage Users and Groups (User Management)
+
+> **Environment:** Linux Bash shell  
+> **Tools:** `useradd`, `usermod`, `chown`, `userdel`, `groupdel` — built-in Linux commands for managing user accounts, group membership, and file ownership
+>
+> **Concept:** This activity focuses on **user management** — the process of creating, modifying, and deleting user accounts and groups in the system. User management is distinct from both **authentication** (verifying who a user is, e.g. via passwords or SSH keys) and **authorization** (what a user is allowed to access, covered in the previous activity). However, it underpins both: without properly managed accounts and group memberships, neither authentication nor authorization can be enforced correctly. As a security analyst, managing the user lifecycle — onboarding, role changes, and offboarding — is a key part of maintaining a secure system.
+
+---
+
+### Commands used
+
+| Command | Purpose |
+|---|---|
+| `sudo useradd researcher9` | Create a new user account named `researcher9` on the system. `sudo` is required to grant elevated privileges for user management. Linux automatically creates a group with the same name as the user |
+| `sudo usermod -g research_team researcher9` | Set `research_team` as the **primary group** of `researcher9`. `-g` (lowercase) modifies the primary group, which is the default group assigned to files created by this user |
+| `sudo chown researcher9 /home/researcher2/projects/project_r.txt` | Transfer ownership of `project_r.txt` to `researcher9`. The new owner gains user-level permissions on the file |
+| `sudo usermod -a -G sales_team researcher9` | Add `researcher9` to `sales_team` as a **supplementary group**, while keeping `research_team` as the primary group. `-a` appends without removing existing groups; `-G` (uppercase) specifies the supplementary group. Omitting `-a` would replace all existing supplementary groups |
+| `sudo userdel researcher9` | Delete the user account `researcher9` from the system. The user's primary group (auto-created at account creation) is not removed automatically if it has no other members |
+| `sudo groupdel researcher9` | Delete the now-empty group `researcher9` that was automatically created when the user was added. Removing leftover empty groups is a security best practice to keep the system clean |
 
 ---
