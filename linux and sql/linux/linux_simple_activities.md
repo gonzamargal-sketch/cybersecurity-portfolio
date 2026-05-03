@@ -185,3 +185,20 @@ A `-` in any position means that permission is not granted.
 | `sudo groupdel researcher9` | Delete the now-empty group `researcher9` that was automatically created when the user was added. Removing leftover empty groups is a security best practice to keep the system clean |
 
 ---
+
+## Activity 8 — Get Help in the Linux Shell
+
+> **Environment:** Linux Bash shell  
+> **Tools:** `whatis`, `man`, `apropos` — built-in Linux commands for accessing documentation and discovering commands directly from the shell
+
+---
+
+### Commands used
+
+| Command | Purpose |
+|---|---|
+| `whatis cat` | Display a single-line description of the `cat` command. Useful for a quick reminder of what a command does without opening the full manual |
+| `man cat` | Open the full manual page for `cat`, including a detailed description and all available options. Press `ENTER` to scroll line by line, `SPACE` to go to the next page, and `Q` to exit |
+| `apropos -a first part file` | Search manual page descriptions for commands matching all the supplied keywords. `-a` requires every keyword to appear in the description, narrowing results. Useful when you know what you want to do but not which command to use |
+
+---
