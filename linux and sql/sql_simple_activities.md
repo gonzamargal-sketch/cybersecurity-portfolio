@@ -7,8 +7,6 @@
 
 ---
 
-### Clauses used
-
 | Clause / Keyword | Purpose |
 |---|---|
 | `SELECT` | Specify which columns to retrieve from a table. Only the listed columns are included in the result |
@@ -18,15 +16,19 @@
 
 ---
 
-### Queries used
+## Activity 2 — Filter Query Results
 
-| Query | Purpose |
+> **Environment:** Relational database (MariaDB shell)  
+> **Tool:** SQL (Structured Query Language)
+
+---
+
+| Clause / Keyword | Purpose |
 |---|---|
-| `SELECT employee_id, device_id FROM employees;` | Retrieve only the `employee_id` and `device_id` columns from the `employees` table |
-| `SELECT * FROM employees;` | Retrieve every column from the `employees` table |
-| `SELECT * FROM log_in_attempts;` | Retrieve every column from the `log_in_attempts` table, listing all recorded login events |
-| `SELECT * FROM log_in_attempts ORDER BY login_date;` | Retrieve all login attempts and sort the results by `login_date` in ascending order (oldest first) |
-| `SELECT * FROM log_in_attempts ORDER BY login_date DESC;` | Retrieve all login attempts and sort the results by `login_date` in descending order (most recent first). `DESC` reverses the default ascending sort |
-| `SELECT * FROM log_in_attempts ORDER BY login_date, login_time;` | Sort results first by `login_date` and then by `login_time` within each date, applying multiple sort criteria in sequence |
+| `DESCRIBE` | Display the structure of a table: column names, data types, and constraints. Useful for understanding a table before querying it |
+| `WHERE` | Filter rows returned by a query, including only rows where the specified condition is true |
+| `LIKE` | Used with `WHERE` to filter text columns by pattern matching. Combined with wildcard characters to match partial strings |
+| `%` | Wildcard that matches zero or more characters in any position. For example, `'a%'` matches any value starting with `a`, and `'%a%'` matches any value containing `a` |
+| `_` | Wildcard that matches exactly one character. For example, `'a_'` matches any two-character value starting with `a` |
 
 ---
