@@ -65,3 +65,37 @@
 | Combined example | `SELECT * FROM log_in_attempts WHERE login_time > '18:00' AND (login_date = '2022-05-08' OR login_date = '2022-05-09') AND NOT country LIKE 'MEX%';` — retrieves failed after-hours login attempts on either of two dates that did not originate from Mexico |
 
 ---
+## Activity 5 — Apply Filters to SQL Queries *(portfolio activity)*
+
+> **Environment:** Relational database (MariaDB shell)  
+> **Tool:** SQL (Structured Query Language)
+
+---
+
+```sql
+-- Retrieve failed login attempts after business hours
+SELECT * FROM log_in_attempts
+WHERE login_time > '18:00:00' AND success = 0;
+
+-- Retrieve login attempts on two specific dates
+SELECT * FROM log_in_attempts
+WHERE login_date = '2022-05-09' OR login_date = '2022-05-08';
+
+-- Retrieve login attempts outside of Mexico
+SELECT * FROM log_in_attempts
+WHERE NOT country LIKE 'MEX%';
+
+-- Retrieve Marketing employees in the East building
+SELECT * FROM employees
+WHERE department = 'Marketing' AND office LIKE 'East%';
+
+-- Retrieve employees in Finance or Sales
+SELECT * FROM employees
+WHERE department = 'Finance' OR department = 'Sales';
+
+-- Retrieve all employees not in Information Technology
+SELECT * FROM employees
+WHERE NOT department = 'Information Technology';
+```
+
+---
