@@ -32,3 +32,20 @@
 | `_` | Wildcard that matches exactly one character. For example, `'a_'` matches any two-character value starting with `a` |
 
 ---
+
+## Activity 3 — Filter by Numeric and Date Ranges
+
+> **Environment:** Relational database (MariaDB shell)  
+> **Tool:** SQL (Structured Query Language)
+
+---
+
+| Clause / Keyword | Purpose |
+|---|---|
+| `>` | Greater than. Returns rows where the column value is strictly greater than the specified value |
+| `>=` | Greater than or equal to. Returns rows where the column value is greater than or equal to the specified value |
+| `<` | Less than. Returns rows where the column value is strictly less than the specified value |
+| `<=` | Less than or equal to. Returns rows where the column value is less than or equal to the specified value |
+| `BETWEEN` | Returns rows where the column value falls within a range, inclusive of both boundary values. Equivalent to `>= lower AND <= upper` |
+
+---
