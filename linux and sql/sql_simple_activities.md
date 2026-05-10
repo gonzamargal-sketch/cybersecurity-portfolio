@@ -49,3 +49,19 @@
 | `BETWEEN` | Returns rows where the column value falls within a range, inclusive of both boundary values. Equivalent to `>= lower AND <= upper` |
 
 ---
+
+## Activity 4 — Filter with Logical Operators
+
+> **Environment:** Relational database (MariaDB shell)  
+> **Tool:** SQL (Structured Query Language)
+
+---
+
+| Clause / Keyword | Purpose |
+|---|---|
+| `AND` | Combines two conditions and returns rows where both are true. Used to narrow results by requiring multiple criteria to be met simultaneously |
+| `OR` | Combines two conditions and returns rows where at least one is true. Used to broaden results by accepting multiple valid values |
+| `NOT` | Negates a condition and returns rows where the condition is false. Often combined with `LIKE` to exclude rows that match a pattern |
+| Combined example | `SELECT * FROM log_in_attempts WHERE login_time > '18:00' AND (login_date = '2022-05-08' OR login_date = '2022-05-09') AND NOT country LIKE 'MEX%';` — retrieves failed after-hours login attempts on either of two dates that did not originate from Mexico |
+
+---
