@@ -99,3 +99,18 @@ WHERE NOT department = 'Information Technology';
 ```
 
 ---
+
+## Activity 6 — Join Tables *(portfolio activity)*
+
+> **Environment:** Relational database (MariaDB shell)  
+> **Tool:** SQL (Structured Query Language)
+
+---
+
+| Clause / Keyword | Purpose |
+|---|---|
+| `INNER JOIN` | Returns only rows where there is a matching value in both tables on the join column. Records that have no match in either table are excluded |
+| `LEFT JOIN` | Returns all rows from the left table (after `FROM`) and the matching rows from the right table. Rows from the left table with no match appear with `NULL` in the right table's columns |
+| `RIGHT JOIN` | Returns all rows from the right table (after `JOIN`) and the matching rows from the left table. Rows from the right table with no match appear with `NULL` in the left table's columns |
+
+---
