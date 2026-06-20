@@ -20,7 +20,7 @@ The scope of this vulnerability assessment relates to the current access control
 
 ## Purpose
 
-The database server is a critical business asset that stores sensitive customer and prospect data used by remote employees worldwide to identify potential customers. Securing this data is essential to maintaining customer trust, complying with data protection obligations, and protecting the company's reputation. If the server were compromised or disabled, the business could face significant financial losses, legal liability, and an inability to carry out core sales operations. This assessment evaluates the risks introduced by the server's public accessibility and recommends controls to reduce the company's exposure.
+The database server is a centralized computer system that stores and manages large amounts of data. The server is used to store customer, campaign, and analytic data that can later be analyzed to track performance and personalize marketing efforts. It is critical to secure the system because of its regular use for marketing operations.
 
 ---
 
@@ -28,9 +28,9 @@ The database server is a critical business asset that stores sensitive customer 
 
 | Threat source | Threat event | Likelihood | Severity | Risk |
 |---|---|---|---|---|
-| Hacker (outsider) | Perform reconnaissance and surveillance of organization | 3 | 2 | 6 |
-| Competitor | Obtain sensitive information via exfiltration | 2 | 3 | 6 |
-| Hacktivist | Conduct Denial of Service (DoS) attacks | 2 | 3 | 6 |
+| Hacker | Obtain sensitive information via exfiltration | 3 | 3 | 9 |
+| Employee | Disrupt mission-critical operations | 2 | 3 | 6 |
+| Customer | Alter/Delete critical information | 1 | 3 | 3 |
 
 **Risk score:** Likelihood × Severity = Risk
 
@@ -38,13 +38,13 @@ The database server is a critical business asset that stores sensitive customer 
 
 ## Approach
 
-This assessment used a qualitative methodology, drawing on the threat source and threat event categories defined in NIST SP 800-30 Rev. 1. The three risks selected reflect the most realistic threats against a publicly accessible database server: external actors probing the system, a competitor attempting to steal customer data, and an outsider disrupting service availability. Likelihood and severity scores were estimated based on how exposed the server is to the public internet and how critical the affected data and systems are to daily business operations. The main limitation of this assessment is its reliance on subjective judgment rather than empirical attack data or penetration testing results.
+Risks that were measured considered the data storage and management procedures of the business. Potential threat sources and events were determined using the likelihood of a security incident given the open access permissions of the information system. The severity of potential incidents were weighed against the impact on day-to-day operational needs.
 
 ---
 
 ## Remediation Strategy
 
-To reduce the identified risks, the company should restrict direct public access to the database server and place it behind a firewall or VPN, allowing connections only from authenticated, authorized sources. Implementing the principle of least privilege would ensure employees can only query the specific data required for their role, while multi-factor authentication (MFA) would reduce the risk of credential-based exfiltration. Adopting a defense-in-depth strategy — combining network segmentation, intrusion detection, and rate limiting — would also help mitigate denial-of-service attempts and unauthorized reconnaissance against the server.
+Implementation of authentication, authorization, and auditing mechanisms to ensure that only authorized users access the database server. This includes using strong passwords, role-based access controls, and multi-factor authentication to limit user privileges. Encryption of data in motion using TLS instead of SSL. IP allow-listing to corporate offices to prevent random users from the internet from connecting to the database.
 
 ---
 
