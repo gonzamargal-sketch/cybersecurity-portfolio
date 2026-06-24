@@ -47,4 +47,31 @@ None — this entry documents the incident based on reported details. No technic
 
 ---
 
+### Entry #2
+
+**Date:** 2026-06-24
+**Entry number:** 2
+**Description:** As a Level 1 SOC analyst at a financial services company, I investigated an alert triggered by a suspicious file downloaded on an employee's computer. The file was delivered via a phishing email disguised as a password-protected spreadsheet. Once opened, the file executed a malicious payload. I used VirusTotal to analyze the file's SHA256 hash and applied the Pyramid of Pain framework to identify associated IoCs.
+
+#### The 5 W's
+
+| | |
+|---|---|
+| **Who** | An unknown threat actor, potentially linked to the BlackTech group based on the Flagpro malware identified by VirusTotal vendors. |
+| **What** | A malicious file was downloaded and executed on an employee's computer, creating multiple unauthorized executables and triggering a SOC alert via the intrusion detection system. |
+| **When** | The incident began at 1:11 p.m. when the employee received the phishing email. The malicious payload executed at 1:13 p.m., unauthorized executables were created at 1:15 p.m., and the IDS alert was sent at 1:20 p.m. |
+| **Where** | An employee's workstation at a financial services company. |
+| **Why** | The employee was socially engineered into opening a password-protected spreadsheet attached to a phishing email. The password was included in the email to bypass automated attachment scanning, and opening the file triggered execution of the embedded malicious payload. |
+
+#### Tools used
+
+- **VirusTotal** — used to analyze the SHA256 hash, retrieve detection verdicts from 72 security vendors, and identify associated IoCs (IP addresses, domains, additional hashes, behavioral data).
+
+#### Additional notes
+
+1. 58 out of 72 security vendors flagged the file as malicious, with a negative community score — strong consensus that the file is malware (identified as Flagpro).
+2. The password-in-email technique is a deliberate evasion tactic to bypass email security gateways that scan attachments — how can this specific vector be detected or blocked upstream?
+
+---
+
 *Journal maintained as part of a professional cybersecurity portfolio.*
