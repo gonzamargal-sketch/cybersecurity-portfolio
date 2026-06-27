@@ -140,4 +140,4 @@ LinkedIn: [Gonzalo Maroto](https://www.linkedin.com/in/gonzalo-maroto/)
 
 Este repositorio documenta el trabajo práctico realizado durante el **Certificado de Ciberseguridad de Google**, cubriendo auditorías de seguridad, análisis de redes, amenazas y vulnerabilidades, detección y respuesta a incidentes, y automatización con Python.
 
-Los documentos están redactados en inglés para maximizar su utilidad en un entorno profesional internacional.
+El curso fue realizado íntegramente en inglés, por lo que todos los documentos, ejercicios y análisis de este repositorio están redactados en ese idioma para mantener la fidelidad con los materiales originales y maximizar su utilidad en un entorno profesional internacional.
